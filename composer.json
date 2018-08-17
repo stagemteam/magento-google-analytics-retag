@@ -1,0 +1,16 @@
+{
+    "name": "stagem/magento-google-analytics-retag",
+    "type": "magento-module",
+    "license":"MIT Licence",
+    "description":"Google Analytics Targeting Module ",
+    "authors":[{
+        "name":"Serhii Popov",
+        "email":"sp@stagem.com.ua"
+    }],
+    "extra": {
+        "map": [
+          ["app/etc/modules/Stagem_GoogleRetag.xml", "app/etc/modules/Stagem_GoogleRetag.xml"],
+          ["app/code/community/Stagem/GoogleRetag/", "app/code/community/Stagem/GoogleRetag/"]
+		]
+    }
+}
