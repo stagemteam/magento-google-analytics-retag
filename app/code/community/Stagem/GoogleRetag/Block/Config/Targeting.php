@@ -17,8 +17,8 @@ class Stagem_GoogleRetag_Block_Config_Targeting extends Mage_Adminhtml_Block_Sys
 {
     public function _prepareToRender()
     {
-        $this->addColumn('page_handler', [
-            'label' => Mage::helper('stagem_googleRetag')->__('Page Handler'),
+        $this->addColumn('full_action_name', [
+            'label' => Mage::helper('stagem_googleRetag')->__('Full Action Name'),
             'style' => 'width:200px',
         ]);
 

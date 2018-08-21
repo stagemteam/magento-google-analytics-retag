@@ -23,20 +23,23 @@
 
 <script type="text/javascript">
 //<![CDATA[
-Stagem.GoogleRetag.path     = '<?php echo Mage::helper('core')->jsQuoteEscape($this->getPath()) ?>';
-Mage.Cookies.domain   = '<?php echo Mage::helper('core')->jsQuoteEscape($this->getDomain()) ?>';
-//]]>
+window['GoogleAnalyticsObject'] = 'ga';
+window['ga'] = window['ga'] || function() {
+  (window['ga'].q = window['ga'].q || []).push(arguments)
+};
 
-//<![CDATA[
 document.observe("dom:loaded", function () {
 <?php $targets = $this->getTargets(); ?>
 <?php foreach ($targets as $target) : ?>
-  <?php if (!$this->matchFullAction($target['action'])) : ?>
-    <?php continue; ?>
-  <?php endif; ?>
-  jQuery(<?= $target['selector'] ?>).on('click', function() {
-      <?= $target['selector'] ?>
-  });
+  <?php $fullActions = explode(',', $target['full_action_name']); ?>
+  <?php foreach ($fullActions as $action) : ?>
+    <?php if (!$this->matchFullAction($action)) : ?>
+      <?php continue; ?>
+    <?php endif; ?>
+    jQuery('<?= $target['selector'] ?>').on('click', function () {
+      <?= $target['code'] ?>;
+    });
+  <?php endforeach; ?>
 <?php endforeach; ?>
 });
 //]]>

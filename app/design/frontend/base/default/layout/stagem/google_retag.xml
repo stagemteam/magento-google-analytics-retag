@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
-<layout>
-    <default translate="label" module="page">
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+    <default>
         <reference name="head">
-            <block type="stagem_googleRetag/js_targeting" name="google.targeting" template="stagem/google_retag/js/targeting.phtml"/>
+            <block ifconfig="stagem_googleRetag/settings/enabled" type="stagem_googleRetag/js_targeting" name="google.targeting" template="stagem/google_retag/js/targeting.phtml" />
         </reference>
     </default>
 </layout>

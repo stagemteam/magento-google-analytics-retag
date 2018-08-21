@@ -22,39 +22,30 @@
 				<!--<resourceModel>popov_base_resource</resourceModel>-->
 			</stagem_googleRetag>
 		</models>
+    </global>
 
-        <frontend>
-            <!--<routers>
+    <frontend>
+        <layout>
+            <updates>
                 <stagem_googleRetag>
-                    <use>standard</use>
-                    <args>
-                        <module>Stagem_GoogleRetag</module>
-                        <frontName>retag</frontName>
-                    </args>
+                    <file>stagem/google_retag.xml</file>
                 </stagem_googleRetag>
-            </routers>-->
-            <layout>
-                <updates>
-                    <stagem_googleRetag>
-                        <file>stagem/google_retag.xml</file>
-                    </stagem_googleRetag>
-                </updates>
-            </layout>
-        </frontend>
+            </updates>
+        </layout>
 
-		<events>
-			<!-- this name is really important, use this to indicate the layout-render-before event -->
-			<!--<controller_action_layout_render_before>
-				<observers>
-					<stagem_googleRetag_cookies_observer>
-						<type>singleton</type>
-						<class>Stagem_GoogleRetag_Model_Observer</class>
-						<method>hookToSetCookies</method>
-					</stagem_googleRetag_cookies_observer>
-				</observers>
-			</controller_action_layout_render_before>-->
+        <events>
+            <!-- this name is really important, use this to indicate the layout-render-before event -->
+            <!--<controller_action_layout_render_before>
+                <observers>
+                    <stagem_googleRetag_cookies_observer>
+                        <type>singleton</type>
+                        <class>Stagem_GoogleRetag_Model_Observer</class>
+                        <method>hookToSetCookies</method>
+                    </stagem_googleRetag_cookies_observer>
+                </observers>
+            </controller_action_layout_render_before>-->
 
-            <controller_action_layout_generate_blocks_after>
+            <!--<controller_action_layout_generate_blocks_after>
                 <observers>
                     <stagem_googleRetag_google_targeting>
                         <type>singleton</type>
@@ -62,8 +53,8 @@
                         <method>hookAfterGenerateBlocks</method>
                     </stagem_googleRetag_google_targeting>
                 </observers>
-            </controller_action_layout_generate_blocks_after>
-		</events>
-	</global>
+            </controller_action_layout_generate_blocks_after>-->
+        </events>
+    </frontend>
 
 </config>

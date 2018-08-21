@@ -15,9 +15,10 @@
 
 class Stagem_GoogleRetag_Block_Js_Targeting extends Mage_Core_Block_Template
 {
-    public function matchFullAction($target)
+    public function matchFullAction($fullActionName)
     {
-        return $target['page_handler'] == Mage::app()->getFrontController()->getAction()->getFullActionName();
+        return ('*' == $fullActionName)
+            || ($fullActionName == Mage::app()->getFrontController()->getAction()->getFullActionName());
     }
 
     public function getTargets()
@@ -25,13 +26,7 @@ class Stagem_GoogleRetag_Block_Js_Targeting extends Mage_Core_Block_Template
         $targeting = Mage::getStoreConfig('stagem_googleRetag/settings/targeting');
         if ($targeting) {
             $targeting = unserialize($targeting);
-            if (is_array($targeting)) {
-                /*foreach ($targeting as $shippingCostsRow) {
-                    $fromPrice = $shippingCostsRow['from_price'];
-                    $cost = $shippingCostsRow['cost'];
-                }*/
-                //return $targeting;
-            } else {
+            if (!is_array($targeting)) {
                 // handle unserializing errors here
                 Mage::throwException('Targeting config cannot be unserialize');
             }
