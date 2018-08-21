@@ -4,13 +4,14 @@
     "license":"MIT Licence",
     "description":"Google Analytics Targeting Module ",
     "authors":[{
-        "name":"Serhii Popov",
-        "email":"sp@stagem.com.ua"
+        "name":"Serhii Popov", "email":"sp@stagem.com.ua"
     }],
     "extra": {
         "map": [
           ["app/etc/modules/Stagem_GoogleRetag.xml", "app/etc/modules/Stagem_GoogleRetag.xml"],
-          ["app/code/community/Stagem/GoogleRetag/", "app/code/community/Stagem/GoogleRetag/"]
+          ["app/code/community/Stagem/GoogleRetag/", "app/code/community/Stagem/GoogleRetag/"],
+          ["app/design/frontend/base/default/layout/stagem/google_retag.xml", "app/design/frontend/base/default/layout/stagem/google_retag.xml"],
+          ["app/design/frontend/base/default/template/stagem/google_retag/", "app/design/frontend/base/default/template/stagem/google_retag/"]
 		]
     }
 }
