@@ -2,8 +2,8 @@
 <layout version="0.1.0">
     <default>
         <reference name="head">
-            <action method="addItem"><type>skin_js</type><name>js/stagem/google-retag.js</name><params/></action>
             <block ifconfig="stagem_googleRetag/settings/enabled" type="stagem_googleRetag/js_targeting" name="google.targeting" template="stagem/google_retag/js/targeting.phtml" />
+            <action method="addItem"><type>skin_js</type><name>js/stagem/google-retag.js</name><params/></action>
         </reference>
     </default>
 </layout>

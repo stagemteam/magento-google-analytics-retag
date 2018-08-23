@@ -4,6 +4,9 @@
 		<Stagem_GoogleRetag>
 			<active>true</active>
 			<codePool>community</codePool>
+            <!--<depends>
+                <Mage_Page />
+            </depends>-->
 		</Stagem_GoogleRetag>
 	</modules>
 </config>
