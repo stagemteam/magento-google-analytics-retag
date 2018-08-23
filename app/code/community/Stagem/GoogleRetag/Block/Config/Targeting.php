@@ -27,6 +27,11 @@ class Stagem_GoogleRetag_Block_Config_Targeting extends Mage_Adminhtml_Block_Sys
             'style' => 'width:200px',
         ]);
 
+        $this->addColumn('event', [
+            'label' => Mage::helper('stagem_googleRetag')->__('Event'),
+            'style' => 'width:200px',
+        ]);
+
         $this->addColumn('code', [
             'label' => Mage::helper('stagem_googleRetag')->__('Execute Code'),
             'style' => 'width:200px',

@@ -28,6 +28,14 @@ window['ga'] = window['ga'] || function() {
   (window['ga'].q = window['ga'].q || []).push(arguments)
 };
 
+var Stagem = Stagem || {};
+Stagem.GoogleRetag = {};
+Stagem.GoogleRetag.targets = <?= json_encode($this->getTargets()) ?>;
+Stagem.GoogleRetag.fullActionName = '<?= Mage::app()->getFrontController()->getAction()->getFullActionName() ?>';
+</script>
+
+<?php return ?>
+
 document.observe("dom:loaded", function () {
 <?php $targets = $this->getTargets(); ?>
 <?php foreach ($targets as $target) : ?>
@@ -36,8 +44,14 @@ document.observe("dom:loaded", function () {
     <?php if (!$this->matchFullAction($action)) : ?>
       <?php continue; ?>
     <?php endif; ?>
-    jQuery('<?= $target['selector'] ?>').on('click', function () {
+    jQuery('<?= $target['selector'] ?>').on('<?= $target['event'] ?>', function () {
+      var elm = jQuery(this);
+      var form = elm.closest('form');
+      if (form.length && form.has('[class^=required-], [class^=validate-]')) {
+
+      }
       <?= $target['code'] ?>;
+      console.log("Run target: <?= $target['code'] ?>");
     });
   <?php endforeach; ?>
 <?php endforeach; ?>
